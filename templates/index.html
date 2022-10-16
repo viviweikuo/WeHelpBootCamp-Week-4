@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        body{
+            margin: 0%;
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .title{
+            height: 100px;
+            color: #285943;
+            line-height: 100px;
+            font-weight: bolder;
+            background-color: #c6d8d3;
+        }
+
+        .inputbox{
+            height: 250px;
+            color: #77af9c;
+            background-color: whitesmoke;
+        }
+
+        form{
+            padding-top: 40px;
+        }
+
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="title">
+            歡迎光臨，請輸入帳號密碼。
+        </div>
+
+        <div class="inputbox">
+            <form action = "/signin" method = "POST">
+                帳號 <input type="text" name="id"/><br/>
+                密碼 <input type="text" name="password"/><br/>
+                <button>登入</button>
+            </form>
+        </div>
+
+        <div class="title">
+            計算正整數的平方：
+        </div>
+
+        <div class="inputbox">
+            <form action="/positive-integer">
+                正整數 <input type="text" name="number"/><br/>
+                <button>計算</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
