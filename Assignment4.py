@@ -29,10 +29,9 @@ def signin():
     memberID = request.form["id"]
     memberPassword = request.form["password"] 
 
-    session["id"] = memberID
-    session["password"] = memberPassword
-
     if (memberID == "test" and memberPassword == "test"):
+        session["id"] = memberID
+        session["password"] = memberPassword
         return redirect("/member")
     elif (memberID == "" or memberPassword == ""):
         return redirect(url_for("error", message = "請輸入帳號、密碼"))
@@ -41,7 +40,10 @@ def signin():
 
 @Assignment4.route("/member")
 def member():
-    return render_template("member.html")
+    if "id" in session:
+        return render_template("member.html")
+    else:
+        return redirect("/")
 
 @Assignment4.route("/error")
 def error():
